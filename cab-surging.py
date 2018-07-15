@@ -200,17 +200,38 @@ observation_1 = 2
 # Get the explanation for Logistic Regression
 exp = explainer.explain_instance(X_validation[observation_1], predict_fn_logreg, num_features=6)
 print(exp.as_list())
-exp.save_to_file('./explanations/log_reg_model.html')
+exp.save_to_file('./explanations/log_reg_model_o1.html')
 
 # Get the explanation for RandomForest
 exp = explainer.explain_instance(X_validation[observation_1], predict_fn_rf, num_features=6)
 print(exp.as_list())
-exp.save_to_file('./explanations/random_forest_model.html')
+exp.save_to_file('./explanations/random_forest_model_o1.html')
 
 # Get the explanation for XGBoost
 exp = explainer.explain_instance(X_validation[observation_1], predict_fn_xgb, num_features=6)
 print(exp.as_list())
-exp.save_to_file('./explanations/xg_boost_model.html')
+exp.save_to_file('./explanations/xg_boost_model_o1.html')
 
 # Look at the actual value in the validation set
 print(Y_validation[observation_1])
+
+# Pick the observation in the validation set for which explanation is required
+observation_2 = 45
+
+# Get the explanation for Logistic Regression
+exp = explainer.explain_instance(X_validation[observation_2], predict_fn_logreg, num_features=6)
+print(exp.as_list())
+exp.save_to_file('./explanations/log_reg_model_o2.html')
+
+# Get the explanation for RandomForest
+exp = explainer.explain_instance(X_validation[observation_2], predict_fn_rf, num_features=6)
+print(exp.as_list())
+exp.save_to_file('./explanations/random_forest_model_o2.html')
+
+# Get the explanation for XGBoost
+exp = explainer.explain_instance(X_validation[observation_2], predict_fn_xgb, num_features=6)
+print(exp.as_list())
+exp.save_to_file('./explanations/xg_boost_model_o2.html')
+
+# Look at the actual value in the validation set
+print(Y_validation[observation_2])
